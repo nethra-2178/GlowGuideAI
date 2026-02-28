@@ -3,6 +3,82 @@ from datetime import datetime
 import sqlite3
 import json
 
+# -------------------- CUSTOM UI THEME --------------------
+def apply_custom_theme():
+    st.markdown(
+        """
+        <style>
+        /* Main background */
+        .stApp {
+            background: linear-gradient(135deg, #fff5f7 0%, #fdf2e9 100%);
+        }
+
+        /* Sidebar/Header styling */
+        [data-testid="stHeader"] {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Chat Message Bubbles */
+        .stChatMessage {
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Assistant Message Styling (Pink/Gold) */
+        [data-testid="stChatMessage"]:nth-child(even) {
+            background-color: #ffffff !important;
+            border-left: 5px solid #D4AF37 !important; /* Gold Accent */
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* User Message Styling (Soft Rose) */
+        [data-testid="stChatMessage"]:nth-child(odd) {
+            background-color: #FFB6C1 !important;
+            color: #333 !important;
+            border-right: 5px solid #D4AF37 !important; /* Gold Accent */
+        }
+
+        /* Input Box Styling */
+        .stChatInputContainer {
+            padding-bottom: 20px;
+        }
+        
+        div[data-testid="stChatInput"] {
+            border: 2px solid #D4AF37 !important;
+            border-radius: 25px;
+        }
+
+        /* Headers and Text */
+        h1, h2, h3 {
+            color: #D4AF37 !important;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        /* Hide Streamlit Branding */
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# -------------------- PAGE CONFIG --------------------
+st.set_page_config(
+    page_title="GlowGuide AI",
+    page_icon="🤍",
+    layout="centered"
+)
+
+apply_custom_theme()
+
+# Add a pretty header
+st.markdown("## ✨ GlowGuide AI ✨")
+st.markdown("<p style='text-align: center; color: #888;'>Your Personal Beauty & Skincare Assistant</p>", unsafe_allow_html=True)
+st.divider()
+
 # -------------------- PAGE CONFIG --------------------
 st.set_page_config(
     page_title="GlowGuide AI",
