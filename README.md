@@ -31,4 +31,3 @@ It simulates real-world e-commerce support flows including:
 
 **Built By**
 Nethra
-AI & Software Enthusiast
